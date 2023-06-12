@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -127,6 +128,10 @@ et appelez la méthode "demanderMiaulement" sur cette instance
 
         cri(felix);
         cri(david);
+
+        int [] tableauEntiers = new int[5];
+        Arrays.fill(tableauEntiers, 0, 5, 8);
+        System.out.println(Arrays.toString(tableauEntiers));
     }
     
     public static void cri(Chat chat){
