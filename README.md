@@ -1,0 +1,9 @@
+Dans le code fourni, la méthode calculerSomme a été déclarée comme static. L'utilisation du mot-clé static signifie que la méthode appartient à la classe elle-même plutôt qu'à une instance spécifique de la classe. Voici pourquoi cela peut être utile dans ce contexte :
+
+Accessibilité directe : Lorsqu'une méthode est déclarée comme static, elle peut être appelée directement à partir de la classe, sans avoir besoin de créer une instance de cette classe. Par exemple, vous pouvez appeler la méthode calculerSomme comme suit : int somme = calculerSomme(tableau);, sans avoir à instancier une classe contenant cette méthode.
+
+Utilisation dans le contexte statique : Si vous souhaitez utiliser la méthode calculerSomme dans une autre méthode ou contexte statique (par exemple, une méthode main), elle doit être déclarée comme static pour être accessible. Les méthodes statiques ne peuvent accéder qu'à d'autres membres statiques de la classe.
+
+Utilisation de la méthode sans état : Dans ce cas, la méthode calculerSomme ne dépend pas de l'état d'une instance spécifique de la classe. Elle ne fait référence qu'au tableau d'entiers passé en paramètre et n'a pas besoin d'accéder à d'autres membres non statiques de la classe. Ainsi, il est approprié de la déclarer comme static pour indiquer qu'elle est autonome et indépendante de l'état de l'objet.
+
+Cependant, si vous avez besoin de maintenir l'état de la méthode ou d'accéder à d'autres membres non statiques de la classe, vous pouvez omettre le mot-clé static et créer une instance de la classe contenant la méthode calculerSomme pour l'appeler. Par exemple :

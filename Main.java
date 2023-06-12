@@ -1,5 +1,8 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args){
@@ -104,7 +107,6 @@ chaque instance de chat. Si un chat est vacciné, affichez la phrase : "Bonjour,
 m'appelle [nom du chat], j'ai [âge du chat] ans et je suis vacciné." Sinon, affichez
 la phrase : "Bonjour, je m'appelle [nom du chat], j'ai [âge du chat] ans et je ne suis
 pas vacciné."
-
 Exercice 4 :
 1. Ajoutez un nouvel attribut "action" de type String à la classe "Chien" et à la classe
 "Chat".
@@ -123,20 +125,66 @@ reposez la question à l’utilisateur.
 5. Dans la méthode "main" de la classe "App", créez une instance de la classe "Chat"
 et appelez la méthode "demanderMiaulement" sur cette instance
  */
-        Chat felix = new Chat("Felix", 33, true);
-        Chat david = new Chat("David", 10, false);
+    //     Chat felix = new Chat("Felix", 33, true);
+    //     Chat david = new Chat("David", 10, false);
 
-        cri(felix);
-        cri(david);
-
-        int [] tableauEntiers = new int[5];
-        Arrays.fill(tableauEntiers, 0, 5, 8);
-        System.out.println(Arrays.toString(tableauEntiers));
-    }
+    //     cri(felix);
+    //     cri(david);
+    // }
     
-    public static void cri(Chat chat){
-           System.out.println(
-            "Le chat " + chat.getName() + " agé de " + chat.getAge() + "ans " + ((chat.getVaccin()) ?  " et il est vacciné" : " et il n'est pas vacciné"));
-            chat.demanderMiaulement();
+    // public static void cri(Chat chat){
+//        System.out.println(
+//         "Le chat " + chat.getName() + " agé de " + chat.getAge() + "ans " + ((chat.getVaccin()) ?  " et il est vacciné" : " et il n'est pas vacciné"));
+//         chat.demanderMiaulement();
+    // }
+
+/*
+ * Exercice 5:
+ * Utilisez un HashSet pour stocker une liste de noms d'étudiants. Demandez à l'utilisateur
+d'entrer les noms jusqu'à ce qu'il entre "q" pour quitter. Ensuite, affichez tous les noms
+d'étudiants enregistrés dans l'ensemble. Assurez-vous de gérer les doublons et
+d'afficher les noms dans l'ordre d'ajout
+ */
+        Set<String> listeEtudiant = new HashSet<>();
+        /*Déclaration hashSet => En Java, les interfaces Map et Set font partie du framework de collections et offrent des 
+        *fonctionnalités puissantes pour stocker, manipuler et organiser des données. Ces interfaces sont implémentées par différentes classes, telles que HashMap, HashSet,
+        *TreeMap et TreeSet, qui fournissent des structures de données spécifiques pour
+        *répondre à des besoins particuliers.
+        *L'interface Set représente une collection d'éléments uniques, sans doublons.
+        *Chaque élément dans un Set est unique et ne peut être présent qu'une seule fois.
+        */
+        System.out.println("Veuillez saisir un premier nom,sinon saisissez q pour quitter");
+        Scanner list = new Scanner(System.in);
+        String nom1 = list.nextLine();
+        while (!nom1.equals("q")){
+            if (listeEtudiant.contains(nom1)){
+                listeEtudiant.remove(nom1);
+            }else{
+                listeEtudiant.add(nom1);
+                System.out.println("Veuillez saisir un nom");
+                nom1 = list.nextLine();
+            }
+        }    
+       list.close();
+
+       for(String element : listeEtudiant){
+            System.out.println(element);
+       }
+
+/*
+ * Exercice 6:
+Créez une méthode qui prend en entrée un tableau d'entiers et renvoie la somme de
+tous les éléments du tableau
+ */
+    int[] tableau = {1, 2, 3, 4, 5};
+    sommeTableau(tableau);
+   
+    }
+    public static void sommeTableau(int[] tableauTest){
+        int somme = 0;
+        for (int i = 0; i < tableauTest.length; i++){
+            somme += tableauTest[i];
+            System.out.println("La somme des éléments du tableau est : " + somme);
         }
+    }
 }
