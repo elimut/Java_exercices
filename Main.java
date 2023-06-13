@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -158,20 +159,16 @@ d'afficher les noms dans l'ordre d'ajout
     //     System.out.println("Veuillez saisir un premier nom,sinon saisissez q pour quitter");
     //     Scanner list = new Scanner(System.in);
     //     String nom1 = list.nextLine();
-    //     while (!nom1.equals("q")){
-    //         if (listeEtudiant.contains(nom1)){
-    //             listeEtudiant.remove(nom1);
-    //         }else{
+    //     while (!nom1.equalsIgnoreCase("q")){
     //             listeEtudiant.add(nom1);
     //             System.out.println("Veuillez saisir un nom");
     //             nom1 = list.nextLine();
-    //         }
     //     }    
-    //    list.close();
-
     //    for(String element : listeEtudiant){
     //         System.out.println(element);
     //    }
+    // }
+    // La méthode equalsIgnoreCase() est utilisée pour comparer une chaîne spécifiée à une autre chaîne, en ignorant les considérations de casse. Deux chaînes sont considérées comme égales sans tenir compte de la casse si elles ont la même longueur et que les caractères correspondants dans les deux chaînes sont égaux sans tenir compte de la casse.
 
 /*
  * Exercice 6:
@@ -195,7 +192,23 @@ tous les éléments du tableau
 Créez une méthode  qui prend  en entrée une ArrayList de chaînes  de caractères et 
 renvoie la chaîne  la plus longue  de la liste.
 */
+    // ArrayList<String> liste = new ArrayList<>();
+    // liste.add("anne");
+    // liste.add("so");
+    // liste.add("moi");
+    
+    // System.out.println(chaineLongue(liste));
 
+    // }
+    // public static String chaineLongue(ArrayList<String> array){
+    //     String longSt = "";
+    //     for (String item : array){
+    //         if(item.length() > longSt.length()){
+    //             longSt = item;
+    //         }
+    //     }
+    //     return longSt;
+    // }
 /*
  * Exercice 8:
 Créez une méthode  qui prend  en entrée une LinkedList  d'objets  et renvoie la taille  de la 
@@ -218,16 +231,62 @@ Créez une méthode  qui prend  en entrée un tableau  d'entiers  et un entier  
 méthode  doit  renvoyer true si l'entier  cible  est présent  dans  le tableau,  sinon  elle  doit 
 renvoyer false.
  */
-        int [] tableauEssai = {0, 1, 3};
-        int cible = 2;
-        System.out.println(compareValeurTableau(tableauEssai, cible));
-    }
-    public static boolean compareValeurTableau(int[] tableauTest2, int number){
-        for(int element : tableauTest2){
-            if (element == number){
-                return true;
-            }
-        }
-        return false;
-    }
+    //     int [] tableauEssai = {0, 1, 3};
+    //     int cible = 2;
+    //     System.out.println(compareValeurTableau(tableauEssai, cible));
+    // }
+    // public static boolean compareValeurTableau(int[] tableauTest2, int number){
+    //     for(int element : tableauTest2){
+    //         if (element == number){
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+
+/*
+ * Exercice 10:
+ * Créez une méthode qui prend en entrée une ArrayList d'objets et un objet cible. La
+méthode doit renvoyer l'indice de la première occurrence de l'objet cible dans la liste, ou
+-1 s'il n'est pas présent.
+ */
+    // ArrayList<String> liste = new ArrayList<>();
+    // liste.add("anne");
+    // liste.add("so");
+    // liste.add("moi");
+    // String test = "paul";
+    // System.out.println(compareCible(liste, test));
+    // }
+
+    // public static int compareCible(ArrayList<String> array, String element){
+    //     for(int i = 0; i < array.size(); i++){
+    //         String item = array.get(i);
+    //         if (element.equals(item)){
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // }
+
+/*
+ * Exercice 11:
+Créez une méthode qui prend en entrée un tableau d'entiers trié par ordre croissant et
+un entier cible. La méthode doit renvoyer true si l'entier cible est présent dans le tableau
+en utilisant une recherche binaire, sinon elle doit renvoyer false.
+*/
+    //     int[] tableauTest3 = {1, 2, 4, 3};
+    //     int cible = 2;
+    //     System.out.println(rechercheBinaire(tableauTest3, cible));
+    // }
+    //     public static boolean rechercheBinaire(int[] array,int cible){
+    //         return Arrays.binarySearch(array, cible) >= 0;
+    //     }
+
+/*
+ * Exercice 12:
+Créez une méthode qui prend en entrée une LinkedList d'entiers et supprime tous les
+éléments pairs de la liste
+ */
+
 }
+ 
