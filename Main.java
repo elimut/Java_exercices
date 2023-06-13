@@ -214,14 +214,14 @@ renvoie la chaîne  la plus longue  de la liste.
 Créez une méthode  qui prend  en entrée une LinkedList  d'objets  et renvoie la taille  de la 
 liste.
  */
-    // List<String> list = new LinkedList<>();
+    // List<Object> list = new LinkedList<>();
     // list.add("anneso");
     // list.add("anne");
     // list.add("so");
     // System.out.println(tailleLinkedList(list));
 
     // }
-    // public static int tailleLinkedList(List<String> list){
+    // public static int tailleLinkedList(List<Objects> list){
     //     return list.size();
     // }
 
@@ -231,18 +231,18 @@ Créez une méthode  qui prend  en entrée un tableau  d'entiers  et un entier  
 méthode  doit  renvoyer true si l'entier  cible  est présent  dans  le tableau,  sinon  elle  doit 
 renvoyer false.
  */
-    //     int [] tableauEssai = {0, 1, 3};
-    //     int cible = 2;
-    //     System.out.println(compareValeurTableau(tableauEssai, cible));
-    // }
-    // public static boolean compareValeurTableau(int[] tableauTest2, int number){
-    //     for(int element : tableauTest2){
-    //         if (element == number){
-    //             return true;
-    //         }
-    //     }
-    //     return false;
-    // }
+        int [] tableauEssai = {0, 1, 3};
+        int cible = 2;
+        System.out.println(compareValeurTableau(tableauEssai, cible));
+    }
+    public static boolean compareValeurTableau(int[] tableauTest2, int number){
+        for(int element : tableauTest2){
+            if (element == number){
+                return true;
+            }
+        }
+        return false;
+    }
 
 /*
  * Exercice 10:
