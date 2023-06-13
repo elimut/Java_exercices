@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -145,7 +147,7 @@ d'entrer les noms jusqu'à ce qu'il entre "q" pour quitter. Ensuite, affichez to
 d'étudiants enregistrés dans l'ensemble. Assurez-vous de gérer les doublons et
 d'afficher les noms dans l'ordre d'ajout
  */
-        Set<String> listeEtudiant = new HashSet<>();
+        // Set<String> listeEtudiant = new HashSet<>();
         /*Déclaration hashSet => En Java, les interfaces Map et Set font partie du framework de collections et offrent des 
         *fonctionnalités puissantes pour stocker, manipuler et organiser des données. Ces interfaces sont implémentées par différentes classes, telles que HashMap, HashSet,
         *TreeMap et TreeSet, qui fournissent des structures de données spécifiques pour
@@ -153,38 +155,79 @@ d'afficher les noms dans l'ordre d'ajout
         *L'interface Set représente une collection d'éléments uniques, sans doublons.
         *Chaque élément dans un Set est unique et ne peut être présent qu'une seule fois.
         */
-        System.out.println("Veuillez saisir un premier nom,sinon saisissez q pour quitter");
-        Scanner list = new Scanner(System.in);
-        String nom1 = list.nextLine();
-        while (!nom1.equals("q")){
-            if (listeEtudiant.contains(nom1)){
-                listeEtudiant.remove(nom1);
-            }else{
-                listeEtudiant.add(nom1);
-                System.out.println("Veuillez saisir un nom");
-                nom1 = list.nextLine();
-            }
-        }    
-       list.close();
+    //     System.out.println("Veuillez saisir un premier nom,sinon saisissez q pour quitter");
+    //     Scanner list = new Scanner(System.in);
+    //     String nom1 = list.nextLine();
+    //     while (!nom1.equals("q")){
+    //         if (listeEtudiant.contains(nom1)){
+    //             listeEtudiant.remove(nom1);
+    //         }else{
+    //             listeEtudiant.add(nom1);
+    //             System.out.println("Veuillez saisir un nom");
+    //             nom1 = list.nextLine();
+    //         }
+    //     }    
+    //    list.close();
 
-       for(String element : listeEtudiant){
-            System.out.println(element);
-       }
+    //    for(String element : listeEtudiant){
+    //         System.out.println(element);
+    //    }
 
 /*
  * Exercice 6:
 Créez une méthode qui prend en entrée un tableau d'entiers et renvoie la somme de
 tous les éléments du tableau
  */
-    int[] tableau = {1, 2, 3, 4, 5};
-    sommeTableau(tableau);
+//     int[] tableau = {1, 2, 3, 4, 5};
+//     sommeTableau(tableau);
    
+//     }
+//     public static void sommeTableau(int[] tableauTest){
+//         int somme = 0;
+//         for (int i = 0; i < tableauTest.length; i++){
+//             somme += tableauTest[i];
+//         }
+//          System.out.println("La somme des éléments du tableau est : " + somme);
+//     }
+// 
+/*
+ *Exercice 7:
+Créez une méthode  qui prend  en entrée une ArrayList de chaînes  de caractères et 
+renvoie la chaîne  la plus longue  de la liste.
+*/
+
+/*
+ * Exercice 8:
+Créez une méthode  qui prend  en entrée une LinkedList  d'objets  et renvoie la taille  de la 
+liste.
+ */
+    // List<String> list = new LinkedList<>();
+    // list.add("anneso");
+    // list.add("anne");
+    // list.add("so");
+    // System.out.println(tailleLinkedList(list));
+
+    // }
+    // public static int tailleLinkedList(List<String> list){
+    //     return list.size();
+    // }
+
+/*
+ * Exercice 9:
+Créez une méthode  qui prend  en entrée un tableau  d'entiers  et un entier  cible.  La 
+méthode  doit  renvoyer true si l'entier  cible  est présent  dans  le tableau,  sinon  elle  doit 
+renvoyer false.
+ */
+        int [] tableauEssai = {0, 1, 3};
+        int cible = 2;
+        System.out.println(compareValeurTableau(tableauEssai, cible));
     }
-    public static void sommeTableau(int[] tableauTest){
-        int somme = 0;
-        for (int i = 0; i < tableauTest.length; i++){
-            somme += tableauTest[i];
-            System.out.println("La somme des éléments du tableau est : " + somme);
+    public static boolean compareValeurTableau(int[] tableauTest2, int number){
+        for(int element : tableauTest2){
+            if (element == number){
+                return true;
+            }
         }
+        return false;
     }
 }
