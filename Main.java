@@ -6,6 +6,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.Iterator;
+// import java.util.*;
+
 
 public class Main {
     public static void main(String[] args){
@@ -231,18 +234,18 @@ Créez une méthode  qui prend  en entrée un tableau  d'entiers  et un entier  
 méthode  doit  renvoyer true si l'entier  cible  est présent  dans  le tableau,  sinon  elle  doit 
 renvoyer false.
  */
-        int [] tableauEssai = {0, 1, 3};
-        int cible = 2;
-        System.out.println(compareValeurTableau(tableauEssai, cible));
-    }
-    public static boolean compareValeurTableau(int[] tableauTest2, int number){
-        for(int element : tableauTest2){
-            if (element == number){
-                return true;
-            }
-        }
-        return false;
-    }
+    //     int [] tableauEssai = {0, 1, 3};
+    //     int cible = 2;
+    //     System.out.println(compareValeurTableau(tableauEssai, cible));
+    // }
+    // public static boolean compareValeurTableau(int[] tableauTest2, int number){
+    //     for(int element : tableauTest2){
+    //         if (element == number){
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
 
 /*
  * Exercice 10:
@@ -254,18 +257,31 @@ méthode doit renvoyer l'indice de la première occurrence de l'objet cible dans
     // liste.add("anne");
     // liste.add("so");
     // liste.add("moi");
+    // liste.add("moi");
     // String test = "paul";
+    // String test1 = "anne";
+    // String test2 = "moi";
     // System.out.println(compareCible(liste, test));
+    // System.out.println(compareCible(liste, test1));
+    // System.out.println(compareCible(liste, test2));
     // }
+    // L' ArrayList est une collection dynamique qui permet de stocker des éléments de manière séquentielle.  
 
     // public static int compareCible(ArrayList<String> array, String element){
     //     for(int i = 0; i < array.size(); i++){
     //         String item = array.get(i);
+    //         // Vous pouvez accéder aux éléments d'un ArrayList en utilisant la méthode “get". Stockage de l'élément de la collection avec l'indice.
     //         if (element.equals(item)){
+    //             // En Java, l’opérateur == sert à comparer les références. Il ne faut donc jamais l’utiliser pour comparer des objets. La comparaison d’objets se fait grâce à la méthode equals héritée de la classe Object.
     //             return i;
     //         }
     //     }
     //     return -1;
+    // la méthode doit retourner un int.
+    // }
+    // ou
+    // if (list.contains(cible)){
+    //     return list.indexOf(cible);
     // }
 
 /*
@@ -279,6 +295,7 @@ en utilisant une recherche binaire, sinon elle doit renvoyer false.
     //     System.out.println(rechercheBinaire(tableauTest3, cible));
     // }
     //     public static boolean rechercheBinaire(int[] array,int cible){
+            // Arrays.sort(array);
     //         return Arrays.binarySearch(array, cible) >= 0;
     //     }
 
@@ -287,6 +304,73 @@ en utilisant une recherche binaire, sinon elle doit renvoyer false.
 Créez une méthode qui prend en entrée une LinkedList d'entiers et supprime tous les
 éléments pairs de la liste
  */
+//         List<Integer> listWithoutPair = new LinkedList<Integer>();
+//         listWithoutPair.add(1);
+//         listWithoutPair.add(2);
+//         listWithoutPair.add(3);
+//         listWithoutPair.add(4);
+//         deletePair(listWithoutPair);
+//         System.out.println("liste après suppression" + listWithoutPair);
+//     }
 
+//         public static void deletePair(List<Integer> list){
+//             Iterator<Integer> it = list.iterator();
+//             // Create an iterator to traverse the list
+//             while(it.hasNext()){
+//             // Iterate through the list garde index supprimé, car penser aux déplacements suite à la suppression du précédent
+//                 int i = it.next();
+//                 // Get the next element from the iterator
+//                 if(i % 2 == 0){
+//                     it.remove();
+//                 }
+//             }
+//         }
+
+/*
+ * Exercice 13:
+Créez une méthode qui prend en entrée un tableau d'entiers et renvoie un nouveau
+tableau qui contient uniquement les nombres premiers présents dans le tableau
+d'origine.
+ */
+    int[] numbers = {2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] primeNumbers = getPrimeNumbers(numbers);
+        for (int primeNumber : primeNumbers) {
+            System.out.print(primeNumber + " ");
+        }
+    }
+
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static int[] getPrimeNumbers(int[] numbers) {
+        List<Integer> primeList = new ArrayList<>();
+
+        for (int number : numbers) {
+            if (isPrime(number)) {
+                primeList.add(number);
+            }
+        }
+
+        int[] primeNumbers = new int[primeList.size()];
+        for (int i = 0; i < primeList.size(); i++) {
+            primeNumbers[i] = primeList.get(i);
+        }
+
+        return primeNumbers;
+    }
+    /*
+     * La méthode isPrime vérifie si un nombre est premier en effectuant une recherche par division jusqu'à la racine carrée du nombre. La méthode getPrimeNumbers itère sur le tableau d'entiers d'origine et ajoute les nombres premiers trouvés à une liste. Ensuite, elle convertit cette liste en un tableau d'entiers et le renvoie.
+    Dans l'exemple ci-dessus, le tableau numbers contient les entiers de 2 à 10. L'appel à getPrimeNumbers(numbers) renvoie un tableau contenant les nombres premiers du tableau d'origine (2, 3, 5 et 7), qui sont ensuite affichés à l'écran.
+     */
 }
- 
